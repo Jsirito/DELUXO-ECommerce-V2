@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 60px;
   color: var(--main-nav-cl);
 `;
 
 export const Wraper = styled.div`
-  padding: 10px 20px;
+  padding: 10px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
