@@ -1,13 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Outfit';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --main-nav-cl: #9595E9;
+  --main-nav-bg-active: #605a65;
+  
+  /* --auth-bg: #6e8afa;
+  --auth-cl: #fff;
+  --auth-btn-bg: #fff;
+  --auth-btn-cl: #6e8afa;
+
+  --menu-bg: #6e8afa;
+  --menu-cl: #fff;
+
+  --main-bg: #fff;
+  --main-cl: #0d1333;
+  --main-cl-alt: #6e7595;
+
+  --main-input-bg: #f5f5f7;
+  --main-input-cl: #404870;
+  --main-input-ph: #6b7192;
+
+  --main-menu: #737373;
+
+  --main-card-bg: #fff;
+  --main-card-cl: #000;
+  --main-card-alt: #6e8afa;
+
+  --main-btn-bg: #5c5b5a;
+  --main-btn-cl: #fff;
+
+  --main-nav-cl: #605a65;
+  --main-nav-cl-active: #fff;
+  --main-nav-bg-active: #6e8afa;
+
+  --reps-bg: #8da3fb;
+  --reps-cl: #fff;
+  --reps-card-bg: #fff;
+  --reps-card-cl: #0d1333;
+  --reps-card-inactive-cl: #8f929b;
+  --reps-card-inactive-line: #eeeef0;
+
+  --reps-btn-bg: #6e8afa;
+  --reps-btn-cl: #fff; */
 }
