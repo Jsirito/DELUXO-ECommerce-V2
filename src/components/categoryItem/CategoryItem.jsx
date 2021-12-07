@@ -1,4 +1,3 @@
-import { Category } from "@mui/icons-material";
 import React from "react";
 
 import { Container, Image, Title, Info, Button } from "./CategoryItemElements";
