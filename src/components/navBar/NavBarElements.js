@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Wraper = styled.div`
-  padding: 10px 25px;
+  padding: 0px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
