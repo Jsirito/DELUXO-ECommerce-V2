@@ -28,6 +28,12 @@ export const Info = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export const Button = styled.button`
