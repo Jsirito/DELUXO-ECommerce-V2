@@ -83,4 +83,18 @@ export const products = [
     price: "50",
     desc: "Lorem Ipsum is simply dummy printing and typesetting industry",
   },
+  {
+    id: 7,
+    img: "https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/Angel-Kiss-Distressed-Black-Denim-Jacket-_337179-front-US.jpg",
+    name: "Angel Kiss Distressed Black Denim Jacket",
+    price: "50",
+    desc: "Lorem Ipsum is simply dummy printing and typesetting industry",
+  },
+  {
+    id: 8,
+    img: "https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/Angel-Kiss-Distressed-Black-Denim-Jacket-_337179-front-US.jpg",
+    name: "Angel Kiss Distressed Black Denim Jacket",
+    price: "50",
+    desc: "Lorem Ipsum is simply dummy printing and typesetting industry",
+  },
 ];
