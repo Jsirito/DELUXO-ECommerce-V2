@@ -84,7 +84,7 @@ export const Name = styled.div`
 export const Desc = styled.div`
   margin-bottom: 10px;
   color: #aaa;
-  max-height: 30px;
+  max-height: 50px;
   overflow: hidden;
 `;
 
