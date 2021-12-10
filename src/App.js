@@ -3,7 +3,7 @@ import ProductList from "./views/productList/ProductList";
 import SingleProduct from "./views/product/SingleProduct";
 
 function App() {
-  return <SingleProduct />;
+  return <Home />;
 }
 
 export default App;

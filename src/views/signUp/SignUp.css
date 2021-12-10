@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUpContainer {
+  max-width: 700px;
+  width: 100%;
+  /* padding: 25px 30px; */
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #71b7e6, #482ff7);
+}
+
+.userDetailsContainer {
+  margin: 20px 0 12px 0;
+}
+
+.inputBox {
+  margin-bottom: 15px;
+  width: calc(100% / 2 -20px);
+}
+
+.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  width: 200px;
+}
+
+.userDetailsContainer .inputBox input {
+  height: 45px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.userDetailsContainer .inputBox input:focus,
+.userDetailsContainer .inputBox input:valid {
+  border-color: #482ff7;
+}
+
+.button {
+  height: 30px;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #71b7e6, #482ff7);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.inputError {
+  background-color: rgb(250, 128, 114, 0.4);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.alreadyAccount {
+  color: #482ff7;
+  cursor: pointer;
+}
