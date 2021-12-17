@@ -51,7 +51,7 @@ function Footer() {
         </SocialMediaIconsContainer>
       </Left>
       <Center>
-        <Title>Links</Title>
+        {/* <Title>Links</Title>
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
@@ -62,7 +62,7 @@ function Footer() {
           <ListItem>Order Tracking</ListItem>
           <ListItem>WhisList</ListItem>
           <ListItem>Terms</ListItem>
-        </List>
+        </List> */}
       </Center>
       <Right>
         <Title>Contact</Title>

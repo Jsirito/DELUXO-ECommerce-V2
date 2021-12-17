@@ -1,9 +1,10 @@
 import Home from "./views/home/Home";
 import ProductList from "./views/productList/ProductList";
 import SingleProduct from "./views/product/SingleProduct";
+import ShoppingCart from "./views/cart/ShoppingCart";
 
 function App() {
-  return <Home />;
+  return <ShoppingCart />;
 }
 
 export default App;
