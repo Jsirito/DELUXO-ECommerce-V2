@@ -21,7 +21,7 @@ export const Container = styled.div`
   min-width: 280px;
   position: relative;
   z-index: 15;
-  margin: 10px auto;
+  /* margin: 10px auto; */
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-wrap: wrap;

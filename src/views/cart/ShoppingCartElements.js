@@ -31,7 +31,6 @@ export const Product = styled.div`
 `;
 
 export const ProductDetail = styled.div`
-  flex: 2;
   display: flex;
 `;
 
@@ -60,7 +59,6 @@ export const ProductColor = styled.div`
 export const ProductSize = styled.span``;
 
 export const PriceDetails = styled.div`
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +69,7 @@ export const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  margin-right: 27  0px;
 `;
 
 export const ProductAmount = styled.div`
