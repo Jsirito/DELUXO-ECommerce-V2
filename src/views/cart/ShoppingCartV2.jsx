@@ -36,6 +36,20 @@ function ShoppingCart() {
               <TableHeader>Quantity</TableHeader>
               <TableHeader>Subtotal</TableHeader>
             </tr>
+            <tr>
+              <TableDetails>
+                <Product>
+                  <ProductImage src="" alt="" />
+                  <ProductInfo>
+                    <ProductName>No product</ProductName>
+                  </ProductInfo>
+                </Product>
+              </TableDetails>
+              <TableDetails>
+                <ProductInputPrice type="number" value="0"></ProductInputPrice>
+              </TableDetails>
+              <TableDetails>$0.00</TableDetails>
+            </tr>
             <p>Please Add some products to the Cart</p>
           </ProductTable>
         </Wrapper>

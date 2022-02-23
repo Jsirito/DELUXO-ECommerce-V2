@@ -70,5 +70,5 @@ export const Summary = styled.table`
 export const SummaryTable = styled.table`
   border-top: 3px solid #ff523b;
   width: 100%;
-  max-width: 350px;
+  max-width: 360px;
 `;

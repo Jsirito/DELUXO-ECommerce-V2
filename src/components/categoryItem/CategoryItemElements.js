@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 
 export const Container = styled.div`
-  flex: 1;
   margin: 3px;
   height: 70vh;
   position: relative;
+  ${mobile({ height: "30vh" })}
 `;
 
 export const Image = styled.img`
@@ -15,7 +16,9 @@ export const Image = styled.img`
 
 export const Title = styled.h1`
   color: white;
+  font-size: 21px;
   margin-bottom: 20px;
+  justify-self: center;
 `;
 
 export const Info = styled.div`
@@ -37,6 +40,7 @@ export const Info = styled.div`
 `;
 
 export const Button = styled.button`
+  font-size: 12px;
   border: none;
   padding: 10px;
   background-color: white;

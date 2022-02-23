@@ -1,9 +1,13 @@
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 
-export const Container = styled.div`
+
+export const Container = styled.footer`
   display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
   background-color: var(--main-foot-bg-active);
   color: var(--main-foot-cl);
+  ${mobile({flexDirection: 'column'})}
 `;
 
 export const Left = styled.div`
@@ -38,10 +42,10 @@ export const SocialMediaIcon = styled.div`
   cursor: pointer;
 `;
 
-export const Center = styled.div`
-  flex: 1;
-  padding: 20px;
-`;
+// export const Center = styled.div`
+//   flex: 1;
+//   padding: 20px;
+// `;
 
 export const Title = styled.h3`
   margin-bottom: 20px;
@@ -59,7 +63,6 @@ export const ListItem = styled.li`
   width: 50%;
   margin-bottom: 5px;
   cursor: pointer;
-
 `;
 
 export const Right = styled.div`

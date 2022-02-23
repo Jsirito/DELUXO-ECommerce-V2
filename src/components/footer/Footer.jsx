@@ -50,8 +50,8 @@ function Footer() {
           </SocialMediaIcon>
         </SocialMediaIconsContainer>
       </Left>
-      <Center>
-        {/* <Title>Links</Title>
+      {/* <Center>
+        <Title>Links</Title>
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
@@ -62,8 +62,8 @@ function Footer() {
           <ListItem>Order Tracking</ListItem>
           <ListItem>WhisList</ListItem>
           <ListItem>Terms</ListItem>
-        </List> */}
-      </Center>
+        </List>
+      </Center> */}
       <Right>
         <Title>Contact</Title>
         <ContactItem>
