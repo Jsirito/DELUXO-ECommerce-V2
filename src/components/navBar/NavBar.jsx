@@ -48,9 +48,8 @@ function NavBar() {
       <Container>
         <Wraper>
           <Left>
-            <Lenguage>EN</Lenguage>
             <SearchContainer>
-              <Input />
+              <Input placeholder="Search " />
               <SearchIcon
                 style={{ color: "var(--main-nav-cl)", fontSize: 25 }}
               />
@@ -60,12 +59,12 @@ function NavBar() {
             <Logo>DELUXO.</Logo>
           </Center>
           <Right>
+            <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
             <MenuItem>
               <Badge badgeContent={4} color="primary">
                 <ShoppingCartIcon color="action" />
               </Badge>
             </MenuItem>
-            <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
           </Right>
         </Wraper>
         <Modal isOpen={isOpen} type={type} onClose={() => setIsOpen(false)} />
