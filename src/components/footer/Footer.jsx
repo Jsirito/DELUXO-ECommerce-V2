@@ -68,7 +68,7 @@ function Footer() {
         <Title>Contact</Title>
         <ContactItem>
           <RoomOutlinedIcon style={{ marginRight: "10px" }} /> 742 Av. Siempre
-          Vviva, SpringField 45554
+          Viva, SpringField 45554
         </ContactItem>
         <ContactItem>
           <PhoneIphoneOutlinedIcon style={{ marginRight: "10px" }} /> +54 911

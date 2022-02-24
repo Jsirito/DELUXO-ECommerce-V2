@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile, tablet } from "../../responsive";
 
 export const Container = styled.div``;
 
@@ -21,6 +22,8 @@ export const ProductImage = styled.img`
 
 export const ProductInfo = styled.div`
   display: grid;
+  ${tablet({ fontSize: "15px" })}
+  ${mobile({ display: "none" })}
 `;
 
 export const ProductName = styled.p`

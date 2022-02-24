@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { mobile } from "../../responsive";
 
-
 export const Container = styled.footer`
   display: flex;
   /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
   background-color: var(--main-foot-bg-active);
   color: var(--main-foot-cl);
-  ${mobile({flexDirection: 'column'})}
+  ${mobile({ flexDirection: "column" })}
 `;
 
 export const Left = styled.div`
@@ -68,6 +67,10 @@ export const ListItem = styled.li`
 export const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({
+    backgroundColor: "var(--main-foot-cl)",
+    color: "var(--main-foot-bg-active)",
+  })}
 `;
 
 export const ContactItem = styled.div`

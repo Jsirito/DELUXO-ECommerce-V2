@@ -1,26 +1,28 @@
 import styled from "styled-components";
+import { tablet } from "../../responsive";
 
 export const Container = styled.div``;
 
 export const Wrapper = styled.div`
   padding: 20px;
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 10px;
+  ${tablet({ fontSize: "18px" })}
 `;
 
 export const ImageContainer = styled.div`
-  flex: 1;
   padding: 20px;
 `;
 
 export const Image = styled.img`
   width: 90%;
-  /* height: 100vh; */
   object-fit: cover;
 `;
 
 export const InfoContainer = styled.div`
-  flex: 1;
-  padding: 0px 50px;
+  padding: 0px 20px;
 `;
 
 export const ProductName = styled.h1`
@@ -37,15 +39,16 @@ export const ProductPrice = styled.span`
 `;
 
 export const FilterContainer = styled.div`
-  width: 50%;
   margin: 30px 0px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 `;
 
 export const Filter = styled.div`
   display: flex;
   align-items: center;
+  margin: 0px 2px;
 `;
 
 export const FilterTitle = styled.span`
@@ -58,7 +61,6 @@ export const FilterColor = styled.div`
   height: 20px;
   border-radius: 50%;
   background-color: ${(props) => props.color};
-  margin: 0px 5px;
   cursor: pointer;
 `;
 
@@ -70,10 +72,9 @@ export const FilterSize = styled.select`
 export const FilterSizeOption = styled.option``;
 
 export const AddContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 `;
 
 export const AmountContainer = styled.div`
