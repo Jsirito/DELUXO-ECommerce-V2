@@ -32,7 +32,6 @@ import {
   Hr,
 } from "./ShoppingCartElements";
 import { Add, Remove } from "@mui/icons-material";
-
 function ShoppingCart() {
   return (
     <Container>

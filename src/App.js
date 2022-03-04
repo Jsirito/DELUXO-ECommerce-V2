@@ -4,7 +4,8 @@ import SingleProduct from "./views/product/SingleProduct";
 import ShoppingCart from "./views/cart/ShoppingCartV2";
 
 function App() {
-  return <ShoppingCart />;
+  return <Home />;
 }
 
 export default App;
+                                                    
