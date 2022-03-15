@@ -9,6 +9,7 @@ const {
 
 //CREATE ORDER
 ordersRouter.post("/newOrder", verifyToken, async (req, res) => {
+  console.log("ASDASD")
   const newOrder = new Order(req.body);
   try {
     const savedOrder = await newOrder.save();
@@ -59,7 +60,7 @@ ordersRouter.get(
   async (req, res) => {
     try {
       const findedOrders = await Order.find({ userId: req.params.userId });
-      res.status(200).send(findedOrders); 
+      res.status(200).send(findedOrders);
     } catch (err) {
       res.status(500).send(err);
     }
@@ -76,7 +77,36 @@ ordersRouter.get("/findAllOrders", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-//GET MONTHLY INCOMED
-//orderRouter.get("/monthlyIncome", verifyTokenAndAdmin, async (req, res){})
+// GET MONTHLY INCOME
+
+ordersRouter.get("/income", verifyTokenAndAdmin, async (req, res) => {
+  //Get current date, last and previous month
+  const date = new Date();
+  const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
+  const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1));
+
+  try {
+    const income = await Order.aggregate([
+      //Condition to get the last two month
+      { $match: { createdAt: { $gte: previousMonth } } },
+      {
+        $project: {
+          month: { $month: "$createdAt" },
+          sales: "$amount",
+        },
+      },
+      //Group by in per month
+      {
+        $group: {
+          _id: "$month",
+          total: { $sum: "$sales" },
+        },
+      },
+    ]);
+    res.status(200).send(income);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
 
 module.exports = ordersRouter;
