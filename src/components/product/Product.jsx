@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   Container,
@@ -13,22 +13,24 @@ import {
   Price,
 } from "./ProductElements";
 
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-function Product({ singleProduct }) {
+function Product({ product }) {
   return (
     <Container>
       <ImageContainer>
-        <Image src={singleProduct.img} />
+        <Image src={product.img} />
       </ImageContainer>
       <Icons>
         <Icon>
           <ShoppingCartOutlinedIcon />
         </Icon>
         <Icon>
-          <SearchIcon />
+          <Link to={`/product/${product._id}`}>
+            <SearchIcon />
+          </Link>
         </Icon>
         <Icon>
           <FavoriteBorderIcon />
@@ -36,10 +38,10 @@ function Product({ singleProduct }) {
       </Icons>
       <Description>
         <Info>
-          <Name>{singleProduct.name}</Name>
-          <Desc>{singleProduct.desc}</Desc>
+          <Name>{product.title}</Name>
+          <Desc>{product.desc}</Desc>
         </Info>
-        <Price>{singleProduct.price}</Price>
+        <Price>{product.price}</Price>
       </Description>
     </Container>
   );
