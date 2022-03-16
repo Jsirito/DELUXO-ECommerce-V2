@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import NavBar from "../../components/navBar/NavBar";
 import Announcement from "../../components/announcement/Announcement";
@@ -24,7 +25,8 @@ import {
 } from "./ShoppingCartElementsV2";
 
 function ShoppingCart() {
-  if (!cartProducts.length)
+  const cart = useSelector((state) => state.cart);
+  if (!cart.product.length)
     return (
       <Container>
         <Announcement />
@@ -68,7 +70,7 @@ function ShoppingCart() {
             <TableHeader>Quantity</TableHeader>
             <TableHeader>Subtotal</TableHeader>
           </tr>
-          {cartProducts.map((product) => {
+          {cart.product.map((product) => {
             return (
               <>
                 <tr>
@@ -86,10 +88,10 @@ function ShoppingCart() {
                   <TableDetails>
                     <ProductInputPrice
                       type="number"
-                      value="0"
+                      value={product.quantity}
                     ></ProductInputPrice>
                   </TableDetails>
-                  <TableDetails>$45.00</TableDetails>
+                  <TableDetails>$ {product.price * product.quantity}</TableDetails>
                 </tr>
                 <Hr />
               </>
@@ -100,15 +102,15 @@ function ShoppingCart() {
           <SummaryTable>
             <tr>
               <TableDetails>Subtotal</TableDetails>
-              <TableDetails>$200.00</TableDetails>
+              <TableDetails>$ {cart.totalPrice}</TableDetails>
             </tr>
             <tr>
               <TableDetails>Tax</TableDetails>
-              <TableDetails>$35.00</TableDetails>
+              <TableDetails>$ {cart.totalPrice * 0.21}</TableDetails>
             </tr>
             <tr>
               <TableDetails>Total</TableDetails>
-              <TableDetails>$235.00</TableDetails>
+              <TableDetails>$ {(cart.totalPrice * 0.21 + cart.totalPrice).toFixed(2)}</TableDetails>
             </tr>
           </SummaryTable>
         </Summary>

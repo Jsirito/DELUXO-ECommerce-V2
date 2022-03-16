@@ -1,4 +1,5 @@
 import React from "react";
+import {useSelector} from "react-redux"
 
 import NavBar from "../../components/navBar/NavBar";
 import Announcement from "../../components/announcement/Announcement";
@@ -33,6 +34,8 @@ import {
 } from "./ShoppingCartElements";
 import { Add, Remove } from "@mui/icons-material";
 function ShoppingCart() {
+  const cart = useSelector(state=>state.cart);
+  console.log(cart)
   return (
     <Container>
       <Announcement />

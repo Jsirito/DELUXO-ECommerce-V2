@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartRedux";
 import axios from "axios";
 
 import NavBar from "../../components/navBar/NavBar";
@@ -34,11 +36,16 @@ import {
 
 function SingleProduct() {
   const location = useLocation();
+  const dispatch = useDispatch();
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
+
+  const handleClick = () => {
+    dispatch(addProduct({ ...product, quantity, color, size }));
+  };
 
   useEffect(() => {
     const getProduct = async () => {
@@ -59,10 +66,6 @@ function SingleProduct() {
       setQuantity(quantity + 1);
     }
   };
-
-  // const handleClick = () => {
-  //   dispatch(addProduct({ ...product, quantity, color, size }));
-  // };
 
   return (
     <Container>
@@ -98,7 +101,7 @@ function SingleProduct() {
               <Amount>{quantity}</Amount>
               <AddIcon onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={() => handleClick()}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavBarContext } from "./navBarContext";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import {
   Container,
@@ -24,6 +25,8 @@ import Modal from "../modal/Modal";
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [type, setType] = useState("logIn");
+  const cartQuantity = useSelector((state) => state.cart.quantity);
+  console.log(cartQuantity);
 
   const changeTypeToSignUp = () => {
     setType("signIn");
@@ -65,7 +68,7 @@ function NavBar() {
             <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
             <MenuItem>
               <Link to={"/cart"}>
-                <Badge badgeContent={4} color="primary">
+                <Badge badgeContent={cartQuantity} color="primary">
                   <ShoppingCartIcon color="action" />
                 </Badge>
               </Link>
