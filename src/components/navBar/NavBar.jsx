@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavBarContext } from "./navBarContext";
+import { Link } from "react-router-dom";
 
 import {
   Container,
@@ -56,14 +57,18 @@ function NavBar() {
             </SearchContainer>
           </Left>
           <Center>
-            <Logo>DELUXO.</Logo>
+            <Link to={"/"}>
+              <Logo>DELUXO.</Logo>
+            </Link>
           </Center>
           <Right>
             <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
             <MenuItem>
-              <Badge badgeContent={4} color="primary">
-                <ShoppingCartIcon color="action" />
-              </Badge>
+              <Link to={"/cart"}>
+                <Badge badgeContent={4} color="primary">
+                  <ShoppingCartIcon color="action" />
+                </Badge>
+              </Link>
             </MenuItem>
           </Right>
         </Wraper>

@@ -1,4 +1,6 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 
 import NavBar from "../../components/navBar/NavBar";
 import Announcement from "../../components/announcement/Announcement";
@@ -31,47 +33,70 @@ import {
 } from "./SingleProductElement";
 
 function SingleProduct() {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:3001/api/products/findProductById/${id}`
+        );
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  // const handleClick = () => {
+  //   dispatch(addProduct({ ...product, quantity, color, size }));
+  // };
+
   return (
     <Container>
       <Announcement />
       <NavBar />
       <Wrapper>
         <ImageContainer>
-          <Image src="https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/Broken-Promises-x-Hot-Stuff-Chillax-Gold-Hoodie-_342621-front-US.jpg" />
+          <Image src={product.img} />
         </ImageContainer>
         <InfoContainer>
-          <ProductName>
-            Broken Promises Could Be Different Orange Hoodie
-          </ProductName>
-          <ProductDescription>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
-            recusandae quis, dolorum iure quasi necessitatibus dolore.
-            Dignissimos, repellendus. Libero, incidunt.
-          </ProductDescription>
-          <ProductPrice>$10</ProductPrice>
+          <ProductName>{product.title}</ProductName>
+          <ProductDescription>{product.desc}</ProductDescription>
+          <ProductPrice>${product.price}</ProductPrice>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black"></FilterColor>
-              <FilterColor color="blue"></FilterColor>
-              <FilterColor color="green"></FilterColor>
+              {product.color?.map((c) => (
+                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+              ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
+                {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <RemoveIcon />
-              <Amount>1</Amount>
-              <AddIcon />
+              <RemoveIcon onClick={() => handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <AddIcon onClick={() => handleQuantity("inc")} />
             </AmountContainer>
             <Button>ADD TO CART</Button>
           </AddContainer>
