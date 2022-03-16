@@ -64,9 +64,11 @@ function NavBar() {
           <Right>
             <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
             <MenuItem>
-              <Badge badgeContent={4} color="primary">
-                <ShoppingCartIcon color="action" />
-              </Badge>
+              <Link to={"/cart"}>
+                <Badge badgeContent={4} color="primary">
+                  <ShoppingCartIcon color="action" />
+                </Badge>
+              </Link>
             </MenuItem>
           </Right>
         </Wraper>
