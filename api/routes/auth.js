@@ -26,7 +26,7 @@ authRouter.post("/register", async (req, res) => {
 authRouter.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({
-      username: req.body.username,
+      username: req.body.username.value,
     });
 
     //Check if there is user
@@ -50,7 +50,7 @@ authRouter.post("/login", async (req, res) => {
 
     const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
-    const inputPassword = req.body.password;
+    const inputPassword = req.body.password.value;
 
     //Check if pass match
     if (originalPassword != inputPassword) {
@@ -58,7 +58,7 @@ authRouter.post("/login", async (req, res) => {
     } else {
       //Deconstruct user to send everythig but the pass
       const { password, ...others } = user._doc;
-      res.status(200).send({...others, accessToken});
+      res.status(200).send({ ...others, accessToken });
     }
   } catch (err) {
     console.log(err);

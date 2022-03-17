@@ -26,7 +26,6 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [type, setType] = useState("logIn");
   const cartQuantity = useSelector((state) => state.cart.quantity);
-  console.log(cartQuantity);
 
   const changeTypeToSignUp = () => {
     setType("signIn");

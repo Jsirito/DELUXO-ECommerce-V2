@@ -35,7 +35,6 @@ import {
 import { Add, Remove } from "@mui/icons-material";
 function ShoppingCart() {
   const cart = useSelector(state=>state.cart);
-  console.log(cart)
   return (
     <Container>
       <Announcement />
