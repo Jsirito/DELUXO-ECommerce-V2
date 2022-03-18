@@ -26,6 +26,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [type, setType] = useState("logIn");
   const cartQuantity = useSelector((state) => state.cart.quantity);
+  const user = useSelector((state) => state.user);
 
   const changeTypeToSignUp = () => {
     setType("signIn");
@@ -44,19 +45,23 @@ function NavBar() {
     changeIsOpenToTrue();
   };
 
-  const contextValue = { changeTypeToLogIn, changeTypeToSignUp };
+  const contextValue = { changeTypeToLogIn, changeTypeToSignUp, setIsOpen };
 
   return (
     <NavBarContext.Provider value={contextValue}>
       <Container>
         <Wraper>
           <Left>
-            <SearchContainer>
+            {user.currentUser ? (
+              <MenuItem>{`Welocome ${user.currentUser.username}`}</MenuItem>
+            ) : null}
+
+            {/* <SearchContainer>
               <Input placeholder="Search " />
               <SearchIcon
                 style={{ color: "var(--main-nav-cl)", fontSize: 25 }}
               />
-            </SearchContainer>
+            </SearchContainer> */}
           </Left>
           <Center>
             <Link to={"/"}>
@@ -64,7 +69,9 @@ function NavBar() {
             </Link>
           </Center>
           <Right>
-            <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
+            <MenuItem onClick={handleIsOpen}>
+              {user.currentUser ? "LogOut" : "LogIn"}
+            </MenuItem>
             <MenuItem>
               <Link to={"/cart"}>
                 <Badge badgeContent={cartQuantity} color="primary">

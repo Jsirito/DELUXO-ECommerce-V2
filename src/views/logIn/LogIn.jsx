@@ -5,16 +5,16 @@ import useInput from "../../hooks/useInput";
 import { login } from "../../redux/apiCalls";
 import "./LogIn.css";
 
-function LogIn() {
+function LogIn({onClose}) {
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
-  const { changeTypeToSignUp } = useContext(NavBarContext);
+  const { changeTypeToSignUp, setIsOpen } = useContext(NavBarContext);
   const username = useInput();
   const password = useInput();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(dispatch, { username, password });
+    login(dispatch, { username, password }, setIsOpen);
   };
 
   return (

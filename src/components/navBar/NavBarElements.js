@@ -18,6 +18,8 @@ export const Wraper = styled.div`
 export const Left = styled.div`
   display: flex;
   align-items: center;
+  justify-self: flex-start;
+
 `;
 
 // export const Lenguage = styled.span`
