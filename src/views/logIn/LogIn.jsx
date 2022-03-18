@@ -5,7 +5,7 @@ import useInput from "../../hooks/useInput";
 import { login } from "../../redux/apiCalls";
 import "./LogIn.css";
 
-function LogIn({onClose}) {
+function LogIn() {
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
   const { changeTypeToSignUp, setIsOpen } = useContext(NavBarContext);

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { NavBarContext } from "./navBarContext";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logOut } from "../../redux/userRedux";
 
 import {
   Container,
@@ -27,6 +28,7 @@ function NavBar() {
   const [type, setType] = useState("logIn");
   const cartQuantity = useSelector((state) => state.cart.quantity);
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const changeTypeToSignUp = () => {
     setType("signIn");
@@ -69,9 +71,14 @@ function NavBar() {
             </Link>
           </Center>
           <Right>
-            <MenuItem onClick={handleIsOpen}>
-              {user.currentUser ? "LogOut" : "LogIn"}
-            </MenuItem>
+            {user.currentUser ? (
+              <MenuItem onClick={() => dispatch(logOut(null))}>
+                LogOut
+              </MenuItem>
+            ) : (
+              <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
+            )}
+
             <MenuItem>
               <Link to={"/cart"}>
                 <Badge badgeContent={cartQuantity} color="primary">

@@ -9,5 +9,6 @@ export const login = async (dispatch, user, setIsOpen) => {
     setIsOpen(false)
   } catch (err) {
     dispatch(loginFailure());
+    // alert("Something went wrong..Try again!")
   }
 };
