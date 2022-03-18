@@ -8,9 +8,9 @@ MongoDB||Express||React||Node
 
 To start the app:
 
-1-Run in root folder: npm start
+1-Run in root folder: npm install and npm start
 
-2-Run in api folder: npm start
+2-Run in api folder: npm install and npm start
 
 # TODO
 - [x] LogIn
