@@ -1,6 +1,7 @@
 # E-Commerce. V 2.0
 
 E-Commerce website.
+
 Stack:
 
 MongoDB||Express||React||Node
