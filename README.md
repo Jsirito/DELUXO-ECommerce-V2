@@ -13,6 +13,6 @@ To start the app:
 
 # TODO
 - [x] LogIn
-- [] SignIn
-- [] CheckOut
-- [] Pay
+- [ ] SignIn
+- [ ] CheckOut
+- [ ] Pay
