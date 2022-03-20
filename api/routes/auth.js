@@ -16,7 +16,6 @@ authRouter.post("/register", async (req, res) => {
   try {
     const savedUser = await newUser.save();
     res.status(201).send(savedUser);
-    console.log(savedUser);
   } catch (err) {
     res.status(500).send(err.message);
   }
@@ -26,7 +25,7 @@ authRouter.post("/register", async (req, res) => {
 authRouter.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({
-      username: req.body.username.value,
+      username: req.body.username,
     });
 
     //Check if there is user
@@ -50,7 +49,7 @@ authRouter.post("/login", async (req, res) => {
 
     const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
-    const inputPassword = req.body.password.value;
+    const inputPassword = req.body.password;
 
     //Check if pass match
     if (originalPassword != inputPassword) {

@@ -14,7 +14,11 @@ function LogIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(dispatch, { username, password }, setIsOpen);
+    login(
+      dispatch,
+      { username: username.value, password: password.value },
+      setIsOpen
+    );
   };
 
   return (
@@ -30,7 +34,7 @@ function LogIn() {
             <div className="inputBox">
               <span className="details">Password</span>
               <input type="password" required {...password} />
-              {error && <div className="error" >Something went wrong...</div>}
+              {error && <div className="error">Something went wrong...</div>}
             </div>
           </div>
           <button className="button" type="submit" disabled={isFetching}>
