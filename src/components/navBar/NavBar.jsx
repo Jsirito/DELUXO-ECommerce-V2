@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { NavBarContext } from "./navBarContext";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logOut } from "../../redux/userRedux";
 
 import {
   Container,
@@ -26,7 +27,8 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [type, setType] = useState("logIn");
   const cartQuantity = useSelector((state) => state.cart.quantity);
-  console.log(cartQuantity);
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   const changeTypeToSignUp = () => {
     setType("signIn");
@@ -45,19 +47,23 @@ function NavBar() {
     changeIsOpenToTrue();
   };
 
-  const contextValue = { changeTypeToLogIn, changeTypeToSignUp };
+  const contextValue = { changeTypeToLogIn, changeTypeToSignUp, setIsOpen };
 
   return (
     <NavBarContext.Provider value={contextValue}>
       <Container>
         <Wraper>
           <Left>
-            <SearchContainer>
+            {user.currentUser ? (
+              <MenuItem>{`Welocome ${user.currentUser.username}`}</MenuItem>
+            ) : null}
+
+            {/* <SearchContainer>
               <Input placeholder="Search " />
               <SearchIcon
                 style={{ color: "var(--main-nav-cl)", fontSize: 25 }}
               />
-            </SearchContainer>
+            </SearchContainer> */}
           </Left>
           <Center>
             <Link to={"/"}>
@@ -65,7 +71,14 @@ function NavBar() {
             </Link>
           </Center>
           <Right>
-            <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
+            {user.currentUser ? (
+              <MenuItem onClick={() => dispatch(logOut(null))}>
+                LogOut
+              </MenuItem>
+            ) : (
+              <MenuItem onClick={handleIsOpen}>LogIn</MenuItem>
+            )}
+
             <MenuItem>
               <Link to={"/cart"}>
                 <Badge badgeContent={cartQuantity} color="primary">
