@@ -20,4 +20,5 @@ To start the app:
 - [ ] Admin panel
 
 # Demo
-![Alt Text](demo/deluxoDemo1.gif)
+![Alt Text](demo/demoDeluxoV2(1).gif)
+![Alt Text](demo/demoDeluxoV2(2).gif)
