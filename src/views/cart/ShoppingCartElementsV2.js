@@ -43,6 +43,7 @@ export const RemoveButton = styled.button`
   background-color: white;
   width: 60px;
   cursor: pointer;
+  margin-left: 14px;
 `;
 
 export const TableHeader = styled.th`
