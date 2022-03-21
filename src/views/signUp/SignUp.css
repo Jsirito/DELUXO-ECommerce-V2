@@ -77,15 +77,16 @@
   transform: scale(1.1);
 }
 
-.inputError {
-  background-color: rgb(250, 128, 114, 0.4);
-  border-radius: 5px;
-  padding: 15px;
-  margin-top: 20px;
-  text-align: center;
-}
-
 .alreadyAccount {
   color: #482ff7;
   cursor: pointer;
+}
+
+.error {
+  color: red;
+  /* background-color: rgb(250, 128, 114, 0.4);
+  border-radius: 5px; */
+  padding: 0px;
+  margin-top: 10px;
+  text-align: center;
 }
