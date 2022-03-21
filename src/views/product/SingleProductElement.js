@@ -4,8 +4,7 @@ import { tablet } from "../../responsive";
 export const Container = styled.div``;
 
 export const Wrapper = styled.div`
-  padding: 20px;
-  /* display: flex; */
+  padding: 40px 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-gap: 10px;

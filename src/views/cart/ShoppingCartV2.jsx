@@ -9,9 +9,9 @@ import {
 import NavBar from "../../components/navBar/NavBar";
 import Announcement from "../../components/announcement/Announcement";
 import Footer from "../../components/footer/Footer";
+import EmptyCart from "./EmptyCart";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import EmptyCart from "./EmptyCart";
 
 import {
   Container,

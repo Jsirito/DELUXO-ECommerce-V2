@@ -46,7 +46,8 @@ export const Slide = styled.div`
 
 export const ImgContainer = styled.div`
   height: 100%;
-  /* padding: 50px; */
+  padding-top: 120px;
+  padding-left: 20px;
   flex: 1;
 `;
 
@@ -55,8 +56,7 @@ export const Image = styled.img`
 `;
 
 export const InfoContainer = styled.div`
-  /* height: 100%; */
-  padding: 50px;
+  padding: 10px;
   flex: 1;
 `;
 

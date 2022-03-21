@@ -3,12 +3,14 @@ import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   color: var(--main-nav-cl);
-  background-color: var(--main-nav-bg-active);
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
 `;
 
 export const Wraper = styled.div`
-  padding: 10px 20px;
-  height: 60px;
+  padding: 20px 20px;
+  height: 20px;
   display: grid;
   align-content: center;
   justify-items: center;
@@ -19,7 +21,6 @@ export const Left = styled.div`
   display: flex;
   align-items: center;
   justify-self: flex-start;
-
 `;
 
 // export const Lenguage = styled.span`
@@ -48,7 +49,8 @@ export const Center = styled.div`
 
 export const Logo = styled.h1`
   font-weight: bold;
-  ${mobile({ fontSize: "30px" })}
+  color: var(--main-nav-cl);
+  ${mobile({ fontSize: "30px" })};
 `;
 
 export const Right = styled.div`
