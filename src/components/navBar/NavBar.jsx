@@ -66,9 +66,9 @@ function NavBar() {
             </SearchContainer> */}
           </Left>
           <Center>
-            {/* <Link to={"/"}>
+            <Link style={{ textDecoration:"none" }} to={"/"}>
               <Logo>DELUXO.</Logo>
-            </Link> */}
+            </Link>
           </Center>
           <Right>
             {user.currentUser ? (
