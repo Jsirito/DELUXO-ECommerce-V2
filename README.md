@@ -18,3 +18,6 @@ To start the app:
 - [ ] CheckOut
 - [ ] Pay
 - [ ] Admin panel
+
+# Demo
+![Alt Text](demo/deluxoDemo1.gif)
