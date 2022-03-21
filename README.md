@@ -14,6 +14,7 @@ To start the app:
 
 # TODO
 - [x] LogIn
-- [ ] SignIn
+- [x] SignIn
 - [ ] CheckOut
 - [ ] Pay
+- [ ] Admin panel
