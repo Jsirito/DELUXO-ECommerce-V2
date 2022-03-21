@@ -97,9 +97,9 @@ function SingleProduct() {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <RemoveIcon onClick={() => handleQuantity("dec")} />
+              <RemoveIcon style={{ cursor: "pointer" }} onClick={() => handleQuantity("dec")} />
               <Amount>{quantity}</Amount>
-              <AddIcon onClick={() => handleQuantity("inc")} />
+              <AddIcon style={{ cursor: "pointer" }} onClick={() => handleQuantity("inc")} />
             </AmountContainer>
             <Button onClick={() => handleClick()}>ADD TO CART</Button>
           </AddContainer>
