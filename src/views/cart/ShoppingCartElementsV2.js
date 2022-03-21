@@ -4,7 +4,7 @@ import { mobile, tablet } from "../../responsive";
 export const Container = styled.div``;
 
 export const Wrapper = styled.div`
-  margin: 30px 40px;
+  padding: 60px 40px;
 `;
 
 export const ProductTable = styled.table`

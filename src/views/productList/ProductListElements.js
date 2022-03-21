@@ -20,7 +20,7 @@ export const FilterText = styled.span`
 `;
 
 export const Title = styled.h1`
-  margin: 20px;
+  margin: 50px 10px 10px 10px;
 `;
 
 export const Select = styled.select`
